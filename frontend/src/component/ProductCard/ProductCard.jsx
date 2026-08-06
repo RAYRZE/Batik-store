@@ -1,16 +1,12 @@
-import { useState } from "react";
-import { FaHeart, FaRegHeart, FaStar, FaCartPlus } from "react-icons/fa6";
+import { FaStar, FaCartPlus } from "react-icons/fa6";
 import { formatPrice } from "../../utils/formatPrice";
 import "./ProductCard.css";
 
 function ProductCard({
   product = {},
   onAddToCart,
-  onToggleFavorite,
   onClick,
 }) {
-  const [isFavorite, setIsFavorite] = useState(false);
-
   const {
     id,
     name,
@@ -22,14 +18,6 @@ function ProductCard({
     image,
     isNew = false,
   } = product;
-
-  const handleFavoriteClick = (e) => {
-    e.stopPropagation();
-    setIsFavorite(!isFavorite);
-    if (onToggleFavorite) {
-      onToggleFavorite(id, !isFavorite);
-    }
-  };
 
   const handleAddToCart = (e) => {
     e.stopPropagation();
@@ -55,14 +43,6 @@ function ProductCard({
             <span className="badge badge--discount">-{discountPercent}%</span>
           )}
         </div>
-
-        <button
-          className={`product-card__fav ${isFavorite ? "is-favorite" : ""}`}
-          onClick={handleFavoriteClick}
-          aria-label="Tambah ke favorit"
-        >
-          {isFavorite ? <FaHeart size={16} /> : <FaRegHeart size={16} />}
-        </button>
 
         <button
           className="product-card__quick-add"
