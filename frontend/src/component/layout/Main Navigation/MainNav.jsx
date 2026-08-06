@@ -6,7 +6,6 @@ import {
   FaXmark,
   FaChevronDown,
   FaMagnifyingGlass,
-  FaUser,
 } from "react-icons/fa6";
 import { useCart } from "../../../hooks/useCart";
 import { fetchCategories } from "../../../services/product";
@@ -170,7 +169,7 @@ function MainNav() {
           </div>
         </nav>
 
-        {/* Right: search, cart, profile */}
+        {/* Right: search, cart */}
         <div className="nav__actions">
           <div className="nav__actions-search">
             <SearchForm />
@@ -186,15 +185,6 @@ function MainNav() {
               <span className="nav__cart-count">{itemCount}</span>
             )}
           </Link>
-
-          <button
-            type="button"
-            className="nav__icon-btn nav__profile"
-            aria-label="Masuk atau daftar (segera hadir)"
-            title="Masuk (segera hadir)"
-          >
-            <FaUser size={18} />
-          </button>
 
           <button
             type="button"
