@@ -1,122 +1,113 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import { lazy, Suspense } from "react";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home/Home";
+import Help from "./pages/Help/Help";
+import About from "./pages/About/About";
+import ProductDetail from "./pages/ProductDetail/ProductDetail";
+import Cart from "./pages/Cart/Cart";
+import Checkout from "./pages/Checkout/Checkout";
+import PlaceholderPage from "./component/PlaceholderPage";
 
-function App() {
-  const [count, setCount] = useState(0)
+const Products = lazy(() => import("./pages/Products/Products"));
+const Categories = lazy(() => import("./pages/Categories/Categories"));
+const Partner = lazy(() => import("./pages/Partner/Partner"));
 
+function Loading() {
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+    <div
+      role="status"
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: "var(--space-3)",
+        padding: "var(--space-8) var(--space-4)",
+        color: "var(--ink-soft)",
+      }}
+    >
+      <span
+        aria-hidden="true"
+        style={{
+          width: 34,
+          height: 34,
+          border: "3px solid var(--brand-50)",
+          borderTopColor: "var(--brand)",
+          borderRadius: "50%",
+          animation: "state-message-spin 0.8s linear infinite",
+        }}
+      />
+      <p style={{ margin: 0 }}>Memuat halaman...</p>
+    </div>
+  );
 }
 
-export default App
+function App() {
+  return (
+    <div className="container">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route
+          path="/products"
+          element={
+            <Suspense fallback={<Loading />}>
+              <Products />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/categories"
+          element={
+            <Suspense fallback={<Loading />}>
+              <Categories />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/partner"
+          element={
+            <Suspense fallback={<Loading />}>
+              <Partner />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/stories"
+          element={
+            <PlaceholderPage eyebrow="Batik Stories" title="Cerita di Balik Motif">
+              <p>
+                Jelajahi kisah dan filosofi di balik setiap motif batik. Cerita
+                ini segera hadir.
+              </p>
+            </PlaceholderPage>
+          }
+        />
+        <Route
+          path="/contact"
+          element={
+            <PlaceholderPage eyebrow="Kontak" title="Hubungi Kami">
+              <p>
+                Butuh bantuan? Hubungi kami melalui WhatsApp atau media sosial.
+              </p>
+              <a
+                className="btn btn--primary"
+                href="https://wa.me/62882003067694"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Chat WhatsApp
+              </a>
+            </PlaceholderPage>
+          }
+        />
+        <Route path="/about" element={<About />} />
+        <Route path="/help" element={<Help />} />
+        <Route path="/product/:id" element={<ProductDetail />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout" element={<Checkout />} />
+      </Routes>
+    </div>
+  );
+}
+
+export default App;

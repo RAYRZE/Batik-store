@@ -1,111 +1,255 @@
+/* ============================================================
+   Design System — Batik Store
+   Warm, premium Indonesian fashion palette. 8px spacing scale.
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  /* Brand — warm batik palette */
+  --brand: #a63a2b;            /* terracotta */
+  --brand-700: #8e2f22;
+  --brand-50: #faeee9;
+  --gold: #c9a24b;             /* wax gold */
+  --gold-soft: #f2e7cd;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+  /* Neutrals — warm paper */
+  --paper: #fbf7f1;            /* page background */
+  --surface: #ffffff;
+  --ink: #2a211c;              /* headings / strong text */
+  --ink-soft: #6e6259;         /* body / muted */
+  --line: #ece3d7;             /* borders */
+  --line-strong: #d9cbbb;
 
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
+  /* Elevation */
+  --shadow-sm: 0 1px 2px rgba(42, 33, 28, 0.06);
+  --shadow-md: 0 8px 24px rgba(42, 33, 28, 0.08);
+  --shadow-lg: 0 24px 48px -12px rgba(42, 33, 28, 0.18);
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+
+  /* 8px spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  /* Typography */
+  --font-serif: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* Layout */
+  --container: 1280px;
+  --container-narrow: 760px;
+
+  /* Base */
+  font-size: 16px;
+  color: var(--ink-soft);
+  background: var(--paper);
+  font-family: var(--font-sans);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
+  line-height: 1.55;
 }
 
 body {
   margin: 0;
+  background: var(--paper);
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
 }
 
 #root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
 }
 
+/* Global scrollbar smoothness */
+html {
+  scroll-behavior: smooth;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--brand);
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* ============ Typography ============ */
 h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+h2,
+h3,
+h4 {
+  font-family: var(--font-serif);
+  color: var(--ink);
+  line-height: 1.15;
+  margin: 0;
+  font-weight: 600;
 }
 
 h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  letter-spacing: -0.5px;
 }
+
 h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
 }
+
+h3 {
+  font-family: var(--font-sans);
+  font-weight: 650;
+  font-size: 1.125rem;
+}
+
 p {
   margin: 0;
 }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+/* ============ Utilities ============ */
+.page {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+.page__main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--space-5);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-inline: var(--space-4);
+  }
+}
+
+/* Shared section heading */
+.section {
+  padding-block: var(--space-9);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-block: var(--space-7);
+  }
+}
+.section__head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.section__eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brand);
+  margin-bottom: var(--space-2);
+}
+
+.section__title {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.section__sub {
+  color: var(--ink-soft);
+  margin-top: var(--space-2);
+  max-width: 44ch;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: 0.95rem 1.9rem;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  line-height: 1;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: transform 0.2s ease, background-color 0.2s ease,
+    box-shadow 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  text-decoration: none;
+}
+
+.btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn--primary {
+  background: var(--brand);
+  color: #fff;
+  box-shadow: 0 6px 18px -8px rgba(166, 58, 43, 0.6);
+}
+
+.btn--primary:hover {
+  background: var(--brand-700);
+  box-shadow: 0 12px 26px -10px rgba(166, 58, 43, 0.65);
+  transform: translateY(-2px);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--line-strong);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn--ghost:hover {
+  border-color: var(--brand);
+  color: var(--brand);
+  background: var(--surface);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn--block {
+  width: 100%;
+}
+

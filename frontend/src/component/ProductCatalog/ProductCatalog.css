@@ -1,0 +1,12 @@
+.product-catalog {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+}
+
+.product-catalog__toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-bottom: var(--space-3);
+}

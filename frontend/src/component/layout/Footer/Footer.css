@@ -1,0 +1,135 @@
+.footer {
+  margin-top: auto;
+  background: var(--ink);
+  color: #f5f1ea;
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.4fr;
+  gap: var(--space-7);
+  padding-block: var(--space-8);
+}
+
+.footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-items: flex-start;
+}
+
+.footer__logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: #f5f1ea;
+}
+
+.footer__logo-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.footer__logo-name {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.footer__logo-name em {
+  font-style: normal;
+  color: var(--gold);
+}
+
+.footer__tagline {
+  color: #c9bfb2;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  max-width: 30ch;
+}
+
+.footer__social {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.footer__social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  color: #f5f1ea;
+  background: rgba(255, 255, 255, 0.08);
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.footer__social a:hover {
+  background: var(--brand);
+  transform: translateY(-2px);
+}
+
+.footer__col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  align-items: flex-start;
+}
+
+.footer__heading {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: var(--space-1);
+}
+
+.footer__col a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: #c9bfb2;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.footer__col a:hover {
+  color: #fff;
+}
+
+.footer__note {
+  font-size: 0.85rem;
+  color: #9d9487;
+}
+
+.footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer__bottom-inner {
+  padding-block: var(--space-5);
+  text-align: center;
+}
+
+.footer__bottom-inner p {
+  font-size: 0.82rem;
+  color: #9d9487;
+}
+
+@media (max-width: 768px) {
+  .footer__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+  }
+}
+
+@media (max-width: 480px) {
+  .footer__grid {
+    grid-template-columns: 1fr;
+  }
+}

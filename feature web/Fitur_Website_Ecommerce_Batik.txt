@@ -1,0 +1,148 @@
+FITUR WEBSITE E-COMMERCE BATIK (MVP + PENGEMBANGAN)
+
+==================================================== CUSTOMER
+====================================================
+
+Authentication - Login - Register - Google Login - Lupa Password - Reset
+Password - Verifikasi Email
+
+Homepage - Hero Banner - Promo - Best Seller - New Arrival - Kategori -
+Brand Story - UMKM Partner
+
+Produk - Daftar Produk - Detail Produk - Foto HD - Video Produk - Zoom
+Gambar - Size Chart - Pilih Warna - Pilih Ukuran - Pilih Jumlah - Sisa
+Stok - Berat Produk - Bahan - Motif - Deskripsi - Produk Serupa - Produk
+Terlaris
+
+Search - Search - Search Suggestion - Filter - Sorting
+
+Filter - Harga - Warna - Ukuran - Motif - Bahan - Gender - Kategori
+
+Wishlist - Tambah Wishlist - Hapus Wishlist
+
+Cart - Tambah Keranjang - Edit Quantity - Hapus Produk
+
+Checkout - Data Pembeli - Alamat - Pilih Kurir - Estimasi Ongkir -
+Voucher - Catatan
+
+Payment - QRIS - Transfer - Virtual Account (pengembangan)
+
+Order - Menunggu Pembayaran - Diproses - Dikirim - Selesai - Dibatalkan
+
+Tracking - Nomor Resi - Status Pengiriman - Estimasi
+
+Review - Rating - Komentar - Upload Foto - Upload Video
+
+Profile - Edit Profil - Alamat - Password - Riwayat Pesanan
+
+==================================================== UMKM
+====================================================
+
+Dashboard - Total Produk - Order Baru - Produk Terjual - Pendapatan
+
+Produk - Tambah Produk - Edit Produk - Hapus Produk
+
+Stok - Update Stok - Update Harga
+
+Order - Lihat Order - Konfirmasi - Input Resi
+
+Analytics - Produk Terlaris - Grafik Penjualan
+
+==================================================== ADMIN
+====================================================
+
+Dashboard - Total Customer - Total Produk - Total UMKM - Total Order -
+Omzet - Profit
+
+Produk - Approve Produk - Edit - Delete
+
+UMKM - Tambah UMKM - Edit UMKM - Nonaktifkan UMKM
+
+Customer - Edit - Blokir
+
+Order - Semua Order - Refund - Tracking
+
+Influencer - Nama - Followers - Engagement - Biaya - Produk Dipinjam -
+Status Pengembalian - Link Video - Views - Penjualan - ROI
+
+Keuangan - Modal Awal - Pengeluaran - Pendapatan - Profit - BOP - Break
+Even Point (BEP)
+
+Marketing - Banner - Promo - Voucher
+
+==================================================== ANALYTICS
+====================================================
+
+-   Visitor
+-   Conversion Rate
+-   Produk Terlaris
+-   Penjualan Harian
+-   Penjualan Bulanan
+-   Omzet
+-   Profit
+-   Produk Favorit
+-   UMKM Terbaik
+
+==================================================== SHIPPING
+====================================================
+
+-   RajaOngkir
+-   Pilihan Kurir
+-   Estimasi
+-   Nomor Resi
+-   Tracking
+
+==================================================== SECURITY
+====================================================
+
+-   JWT Login
+-   Hash Password
+-   Rate Limiting
+-   Email Verification
+-   HTTPS
+
+==================================================== UI / UX
+====================================================
+
+-   Responsive
+-   Dark Mode
+-   Loading Skeleton
+-   Toast Notification
+-   Infinite Scroll (Opsional)
+
+==================================================== HALAMAN
+====================================================
+
+-   Home
+-   Shop
+-   Detail Produk
+-   Cart
+-   Checkout
+-   Login
+-   Register
+-   Profile
+-   Wishlist
+-   About
+-   Contact
+-   FAQ
+-   Syarat & Ketentuan
+-   Privacy Policy
+-   Shipping Policy
+-   Return Policy
+
+==================================================== PENGEMBANGAN (V2)
+====================================================
+
+-   Payment Gateway
+-   Affiliate
+-   Loyalty Point
+-   Referral
+-   Membership
+-   AI Recommendation
+-   Chat WhatsApp
+-   Notifikasi Email
+-   Notifikasi WhatsApp
+-   Multi UMKM
+-   Multi Admin
+-   Export Excel
+-   Export PDF
