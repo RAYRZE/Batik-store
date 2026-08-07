@@ -27,7 +27,7 @@ export function buildWhatsAppMessage(items, { subtotal, total }) {
 }
 
 export function buildWhatsAppLink(message, phone = "") {
-  const base = "https://wa.me/";
   const number = phone.replace(/[^0-9]/g, "");
-  return `${base}${number}?text=${encodeURIComponent(message)}`;
+  if (!number) return "";
+  return `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
 }

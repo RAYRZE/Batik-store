@@ -62,14 +62,14 @@ function Home() {
       <section className="hero">
         <div className="container hero__inner">
           <div className="hero__content">
-            <span className="hero__eyebrow">Warisan Nusantara</span>
+            <span className="hero__eyebrow">Marketplace Batik Indonesia</span>
             <h1 className="hero__title">
-              Batik Premium, <br />
-              Keindahan <em>Indonesia</em>
+              Batik Berkualitas, <br />
+              untuk <em>Semua</em>
             </h1>
             <p className="hero__sub">
-              Temukan koleksi batik tulis dan cap terbaik, dibuat oleh
-              pengrajin berbakat dengan penuh cinta dan makna.
+              Temukan koleksi batik pilihan dari berbagai UMKM Indonesia
+              dengan kualitas terjamin dan harga yang bersahabat.
             </p>
             <div className="hero__actions">
               <button
@@ -89,7 +89,7 @@ function Home() {
 
           <div className="hero__media">
             <div className="hero__image-frame">
-              <img src={HERO_IMAGE} alt="Batik Nusantara" className="hero__image" />
+              <img src={HERO_IMAGE} alt="BeliBatik" className="hero__image" />
               <div className="hero__badge">
                 <strong>100%</strong>
                 <span>Asli Batik Indonesia</span>
@@ -144,9 +144,7 @@ function Home() {
               key={cat}
               type="button"
               className="home-cats__item"
-              onClick={() =>
-                document.getElementById("catalog")?.scrollIntoView({ behavior: "smooth" })
-              }
+              onClick={() => navigate(`/products?category=${encodeURIComponent(cat)}`)}
             >
               <span className="home-cats__name">{cat}</span>
               <span className="home-cats__arrow">&rarr;</span>
@@ -160,7 +158,7 @@ function Home() {
         <div className="section__head section__head--center">
           <div>
             <span className="section__eyebrow">Mengapa Kami</span>
-            <h2 className="section__title">Kenapa Memilih Batik Nusantara</h2>
+            <h2 className="section__title">Kenapa Memilih BeliBatik</h2>
           </div>
         </div>
         <div className="home-features">
@@ -188,7 +186,7 @@ function Home() {
               </p>
             </div>
           </div>
-          <ProductCatalog />
+          <ProductCatalog initialProducts={products} />
         </div>
       </section>
     </PageLayout>

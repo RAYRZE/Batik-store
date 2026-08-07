@@ -11,7 +11,11 @@ if not DATABASE_URL:
         "and set DATABASE_URL."
     )
 
-DEFAULT_CORS_ORIGINS = "http://localhost:5173,http://127.0.0.1:5173"
+DEFAULT_CORS_ORIGINS = (
+    "http://localhost:5173,"
+    "http://127.0.0.1:5173,"
+    "https://batik-store.vercel.app"
+)
 CORS_ORIGINS = [
     origin.strip()
     for origin in os.getenv("CORS_ORIGINS", DEFAULT_CORS_ORIGINS).split(",")

@@ -15,9 +15,9 @@ function Footer() {
       <div className="container footer__grid">
         <div className="footer__brand">
           <Link to="/" className="footer__logo">
-            <img src={Logo} alt="Batik Nusantara" className="footer__logo-img" />
+            <img src={Logo} alt="BeliBatik" className="footer__logo-img" />
             <span className="footer__logo-name">
-              Batik <em>Nusantara</em>
+              Beli<em>Batik</em>
             </span>
           </Link>
           <p className="footer__tagline">
@@ -65,7 +65,7 @@ function Footer() {
 
       <div className="footer__bottom">
         <div className="container footer__bottom-inner">
-          <p>© {new Date().getFullYear()} Batik Nusantara. Dibuat dengan ♥ di Indonesia.</p>
+          <p>© {new Date().getFullYear()} BeliBatik. Dibuat dengan ♥ di Indonesia.</p>
         </div>
       </div>
     </footer>

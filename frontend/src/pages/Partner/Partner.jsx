@@ -21,7 +21,7 @@ const WHATSAPP_NUMBER =
   import.meta.env.VITE_WHATSAPP_NUMBER || DEFAULT_WHATSAPP_NUMBER;
 
 const PARTNER_MSG =
-  "Halo, saya tertarik untuk bergabung sebagai mitra UMKM di Batik Nusantara.";
+  "Halo, saya tertarik untuk bergabung sebagai mitra UMKM di BeliBatik.";
 
 const REASONS = [
   {
@@ -125,7 +125,7 @@ function Partner() {
         <div className="container partner-hero__inner">
           <span className="section__eyebrow">Program Kemitraan</span>
           <h1 className="partner-hero__title">
-            Jadilah Mitra Batik <em>Nusantara</em>
+            Jadilah Mitra Batik <em>BeliBatik</em>
           </h1>
           <p className="partner-hero__desc">
             Bersama kami, kembangkan usaha batik Anda dan raih lebih banyak

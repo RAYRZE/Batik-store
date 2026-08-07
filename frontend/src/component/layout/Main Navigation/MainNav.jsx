@@ -97,9 +97,9 @@ function MainNav() {
     <header className="nav">
       <div className="container nav__inner">
         <Link to="/" className="nav__brand" onClick={() => setMenuOpen(false)}>
-          <img src={Logo} alt="Batik Nusantara" className="nav__logo" />
+          <img src={Logo} alt="BeliBatik" className="nav__logo" />
           <span className="nav__brand-name">
-            Batik <em>Nusantara</em>
+            Beli<em>Batik</em>
           </span>
         </Link>
 
@@ -224,7 +224,7 @@ function MainNav() {
           >
             <img src={Logo} alt="" className="nav__logo" />
             <span className="nav__brand-name">
-              Batik <em>Nusantara</em>
+              Beli<em>Batik</em>
             </span>
           </Link>
           <button

@@ -16,14 +16,30 @@ const EMPTY_MESSAGE = "Belum ada produk.";
 const ERROR_MESSAGE = "Gagal memuat produk. Silakan coba lagi.";
 const SEARCH_DELAY_MS = 300;
 
-function ProductCatalog({ initialSearch = "", initialCategory = "" }) {
+function ProductCatalog({
+  initialSearch = "",
+  initialCategory = "",
+  initialProducts,
+}) {
   const navigate = useNavigate();
   const { addItem } = useCart();
   const [searchInput, setSearchInput] = useState(initialSearch);
   const [category, setCategory] = useState(initialCategory);
   const [categories, setCategories] = useState([]);
   const search = useDebounce(searchInput, SEARCH_DELAY_MS);
-  const { products, isLoading, error } = useProducts({ search, category });
+
+  const hasInitialData =
+    Array.isArray(initialProducts) &&
+    initialSearch === "" &&
+    initialCategory === "";
+
+  const { products, isLoading, error } = useProducts(
+    { search, category },
+    {
+      enabled: !hasInitialData || search !== "" || category !== "",
+      initialData: hasInitialData ? initialProducts : null,
+    },
+  );
 
   useEffect(() => {
     fetchCategories()
